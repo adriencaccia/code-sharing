@@ -1,25 +1,18 @@
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  // module: {
-  //   rules: [{
-  //     use: {
-  //       loader: 'babel-loader',
-  //       options: {
-  //         plugins: ['lodash'],
-  //         presets: [['@babel/preset-env', {'modules': false}]]
-  //       }
-  //     },
-  //     test: /\.js$/,
-  //     exclude: /node_modules/,
-  //   }]
-  // },
+  module: {
+    rules: [{
+      test: /\.ts$/,
+      loader: 'babel-loader',
+      exclude: [[path.resolve(__dirname, 'node_modules')]],
+    }]
+  },
   mode: 'development',
   optimization: {
     usedExports: true,
@@ -27,9 +20,4 @@ module.exports = {
     sideEffects: true
   },
   devtool: false,
-  // plugins: [
-  //   new BundleAnalyzerPlugin(),
-  //   // new LodashModuleReplacementPlugin(),
-  //   // new DuplicatePackageCheckerPlugin()
-  // ]
 };

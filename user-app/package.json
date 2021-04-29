@@ -4,18 +4,20 @@
   "description": "",
   "scripts": {
     "transpile": "babel src --extensions .ts",
-    "package": "rm -rf dist && yarn package:cjs && yarn package:esm && yarn build:webpack",
-    "package:cjs": "NODE_ENV=cjs yarn transpile --out-dir dist/cjs",
-    "package:esm": "NODE_ENV=esm yarn transpile --out-dir dist/esm",
-    "build:webpack": "webpack"
+    "package": "rm -rf dist && yarn package:cjs && yarn package:esm && yarn build:webpack && yarn build:esbuild:browser && yarn build:esbuild:node",
+    "package:cjs": "NODE_ENV=cjs yarn transpile --out-dir dist/babel/cjs",
+    "package:esm": "NODE_ENV=esm yarn transpile --out-dir dist/babel/esm",
+    "build:webpack": "webpack",
+    "build:esbuild:browser": "esbuild src/index.ts --bundle --outfile=dist/esbuild/browser/index.js --target=chrome58,firefox57,safari11,edge16",
+    "build:esbuild:node": "esbuild src/index.ts --bundle --outfile=dist/esbuild/node/index.js --platform=node --target=node14.16"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
     "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.13.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
@@ -24,6 +26,7 @@
     "webpack-cli": "^4.3.1"
   },
   "dependencies": {
-    "user-library": "1.0.0"
+    "user-library": "1.0.0",
+    "esbuild": "^0.11.16"
   }
 }

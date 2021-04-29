@@ -2767,9 +2767,6 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-"user-library@file:../user-library":
-  version "1.0.0"
-
 v8-compile-cache@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.2.0.tgz#9471efa3ef9128d2f7c6a7ca39c4dd6b5055b132"

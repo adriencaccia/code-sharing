@@ -1,6 +1,13 @@
 module.exports = {
   presets: [
     ["@babel/preset-typescript", { allowNamespaces: true }],
-    ["@babel/preset-env", { modules: false }],
+    [
+      "@babel/preset-env",
+      {
+        targets: {
+          esmodules: true,
+        },
+      },
+    ],
   ],
 };

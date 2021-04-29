@@ -1,3 +1,5 @@
+const config = require("../babel.config");
+
 module.exports = {
   presets: [
     ["@babel/preset-typescript", { allowNamespaces: true }],
@@ -10,4 +12,5 @@ module.exports = {
       },
     ],
   ],
+  ...config,
 };

@@ -13,6 +13,9 @@ module.exports = {
       exclude: [[path.resolve(__dirname, 'node_modules')]],
     }]
   },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
   mode: 'development',
   optimization: {
     usedExports: true,

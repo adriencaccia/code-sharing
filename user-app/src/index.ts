@@ -1,5 +1,5 @@
-import { logUserAccount } from "./userService1.ts";
-import { logUserPhoneNumber } from "./userService2.ts";
+import { logUserAccount } from "./userService1";
+import { logUserPhoneNumber } from "./userService2";
 
 const main = async () => {
   logUserAccount();

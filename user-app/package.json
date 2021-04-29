@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "transpile": "babel src --extensions .ts",
+    "package": "rm -rf dist && yarn package:cjs && yarn package:esm && yarn build:webpack",
+    "package:cjs": "NODE_ENV=cjs yarn transpile --out-dir dist/cjs",
+    "package:esm": "NODE_ENV=esm yarn transpile --out-dir dist/esm",
+    "build:webpack": "webpack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.13.10",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-typescript": "^7.13.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",

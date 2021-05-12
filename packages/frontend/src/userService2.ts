@@ -1,4 +1,4 @@
-import { userPhoneNumber } from 'user-library'
+import { userPhoneNumber } from "@tree-shaking/shared"
 
 export const logUserPhoneNumber = () => {
 	console.log(userPhoneNumber)

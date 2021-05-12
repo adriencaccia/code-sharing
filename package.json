@@ -1,8 +1,8 @@
 {
-  "name": "tree-shaking",
+  "name": "code-sharing",
   "private": true,
   "version": "1.0.0",
-  "workspaces": ["user-app", "user-library"],
+  "workspaces": ["packages/*"],
   "author": "Adrien Cacciaguerra <adrien.caccia@gmail.com>",
   "license": "MIT"
 }

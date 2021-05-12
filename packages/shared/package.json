@@ -1,5 +1,5 @@
 {
-  "name": "user-library",
+  "name": "@tree-shaking/shared",
   "version": "1.0.0",
   "description": "",
   "files": [

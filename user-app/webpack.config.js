@@ -16,6 +16,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
+  mainFields: ['main'],
   mode: 'development',
   optimization: {
     usedExports: true,

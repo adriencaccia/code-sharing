@@ -1,3 +1,3 @@
 export const userAccount = {
-  name: "user account",
+  name: "user account 🚀",
 };

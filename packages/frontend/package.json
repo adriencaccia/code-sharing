@@ -22,6 +22,8 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
+    "esbuild-visualizer": "^0.3.0",
+    "nanoid": "^3.1.23",
     "webpack": "^5.24.3",
     "webpack-cli": "^4.3.1"
   },
